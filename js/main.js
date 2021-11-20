@@ -4646,13 +4646,10 @@ pokemons = pokemons.slice(0,20);
      cardButtons.classList.add( "d-flex");
 
      var cardButton = document.createElement("button");
-     cardButton.classList.add( "card__buttons-buton");
+     cardButton.classList.add( "card__buttons-button");
      cardButton.textContent = "Like";
      
-    //  cardButton.classList.add( "btn-outline-info");
-    //  cardButton.classList.add( "m-1");
-
-     
+    
      var cardLikeImg = document.createElement("img");
      cardLikeImg.src = "./img/thumbs-up-solid.svg"
      cardLikeImg.setAttribute("id", "likedBtn");
@@ -4684,20 +4681,22 @@ pokemons = pokemons.slice(0,20);
     likedpokemons.textContent = memory.length;
     console.log(memory);
 });
-
-
 var rotate = 0;
-for (const toy of pokemons) {
-    
-    cardButton.addEventListener("click",function(){
-        // document.body.classList.toggle("dark");
-        
-        // document.body.classList.toggle(".sun");
-        // toggleBtn.classList.toggle("toggle--on");
-        rotate = rotate + -180
-        cardLikeImg.rotate(rotate);
-      
-      });
+for(const toy of pokemons){
+
+    card.addEventListener('click', function (event){
+         if(event.target.matches("card__buttons-button")){
+            rotate = rotate + 180;
+            cardLikeImg.rotate(rotate); 
+         }
+    });
 }
+
+    
+    
+        
+        
+      
+
 
 
